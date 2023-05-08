@@ -1,0 +1,47 @@
+@import "../../assets/css/global";
+
+.app-layout {
+  padding-left: 16%;
+  .app-header {
+    @include flexBox(space-between, center);
+    padding: 10px 0;
+    margin-bottom: 15px;
+    h4 {
+      margin: 0!important;
+      padding: 0 !important;
+      font-size: 17px;
+      font-weight: 500;
+      color: #444;
+    }
+    .app-header-actions {
+      @include flexBox();
+      gap: 3px;
+    }
+  }
+
+  .app-admin-content {
+
+    .main-content {
+      padding: 15px 25px;
+    }
+
+  }
+}
+
+.app-english {
+  direction: ltr;
+}
+.app-arabic {
+  direction: rtl;
+}
+
+*::placeholder {
+  color: gray !important;
+  font-size: 13px;
+}
+input:focus::placeholder, textarea:focus::placeholder {
+  color: transparent !important;
+}
+textarea {
+  width: 100% !important;
+}

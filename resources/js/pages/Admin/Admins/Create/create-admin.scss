@@ -1,0 +1,13 @@
+@import "../../../../assets/css/global";
+
+.create-user {
+  display: grid;
+  grid-template-columns: 1.5fr 1.2fr;
+  gap: 16px;
+  .right-data {
+    height: fit-content;
+    .list-items {
+      @include makeBox();
+    }
+  }
+}

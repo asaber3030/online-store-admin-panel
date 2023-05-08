@@ -1,0 +1,15 @@
+@import "../../../assets/css/global";
+
+.admin-login-app {
+
+  @include makeBox();
+  padding: 16px;
+  width: 40%;
+  margin: 150px auto;
+
+  > h5 {
+    text-align: center;
+  }
+
+}
+

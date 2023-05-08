@@ -1,0 +1,159 @@
+@import "../../../../assets/css/global";
+
+.view-user-container {
+  display: flex;
+  gap: 15px;
+
+  // Navigation menu
+  .user-navigation-menu {
+    @include makeBox();
+    flex: 1;
+    height: fit-content;
+    .nav-user-item {
+      @include flexBox();
+      padding: 3px 18px;
+      border-radius: 2px;
+      margin: 2px 0;
+      font-size: 13px;
+      gap: 5px;
+      color: #444;
+      &:hover { background-color: #2222225c; color: #000 }
+      .item-icon { flex: 1; }
+      .item-text { flex: 10; }
+      &.red-c:hover { background-color: #c91a1726; }
+      &.red-c.active-item { background-color: #c91a1726; }
+      &.active-item { background-color: #2222225c; color: #000; font-weight: bold }
+    }
+    hr { color: #b9b9b9; margin: 5px 0 !important; }
+
+  }
+
+  // Default content
+  .page-user-content {
+    flex: 5;
+    .page-header {
+      @include flexBox(space-between, center);
+      padding: 0 0 10px;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 15px;
+      .page-title {
+        @include flexBox(flex-start, center);
+        font-weight: 800;
+        gap: 10px;
+        img { width: 35px; height: 35px }
+      }
+      .actions { @include flexBox(); gap: 3px; }
+    }
+  }
+
+  // Main user view: [users/{id}/view]
+  .main-user-view {
+    .page-main-content {
+      @include flexBox();
+      gap: 10px;
+      .default-section {
+        @include makeBox();
+        width: 32%;
+        .section-title { font-weight: 800 !important; margin: 0 10px 10px; }
+        ul {
+          padding: 0 10px;
+          li { padding: 5px 0; &:not(:last-of-type) { border-bottom: 1px solid #f1f1f1; } }
+        }
+      }
+      .company-section {
+        .section-title span {
+          color: $wet-dark;
+        }
+      }
+
+    }
+  }
+
+  // User company [users/{id}/view/company]
+  .view-user-company {
+    .page-main-content {
+      @include flexBox();
+      gap: 15px;
+      .company {
+        flex: .6;
+      }
+      .quick-access-links-company {
+        flex: 1;
+        .list-links {
+
+          @include flexBox();
+          gap: 10px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid #ddd;
+        }
+
+        .quick-access-link {
+          @include transition();
+          text-align: center;
+          flex: 1;
+          padding: 15px;
+          border-radius: 5px;
+          &:hover { background-color: #FFF; box-shadow: 0 2px 8px #ddd; }
+          &.delete-c { &:hover { background-color: #ffc5c4; } h6 { color: $red-dark; font-weight: 900; } }
+          h6 { font-size: 13px; color: #333; margin-top: 10px; font-weight: 600 }
+          img {
+            width: 40px;
+            height: 40px;
+            margin: auto;
+          }
+        }
+      }
+    }
+  }
+
+  // User settings [users/{id}/view/settings]
+  .view-user-settings {
+    .settings-title {
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    .d-flex {
+      @include flexBox();
+      gap: 10px;
+      .form-container { flex: 1.8; }
+      .user { flex: 1; margin-top: 30px; }
+
+    }
+
+    hr {
+      color: #999;
+    }
+  }
+
+}
+
+.quick-access-links {
+  .quick-access-link {
+    @include flexBox();
+    gap: 10px;
+    margin: 8px 0 0;
+    border-radius: 5px;
+    padding: 10px 15px;
+    &:hover { background-color: #f1f1f1; }
+    &.delete-c { background-color: #ff3a3a29; h6 { font-weight: bold; color: $red-dark; } span { color: $red-light; } }
+    img { width: 25px; height: 25px; }
+    .text {
+      flex: 8;
+    }
+    h6 { font-size: 14px; color: #222; }
+    span { font-size: 11px; color: gray; }
+  }
+}
+.no-company {
+  @include makeBox();
+  text-align: center;
+  img {
+    width: 80px;
+    height: 80px;
+    margin: 15px auto;
+  }
+  h6 { font-weight: 900 }
+  a { margin: 10px auto 0; display: block;
+    width: fit-content;}
+}
+

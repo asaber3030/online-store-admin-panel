@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=Poppins:wght@100;200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// Variables
+$blue-light: #3498db;
+$blue-dark: #2980b9;
+
+$green-light: #2ecc71;
+$green-dark: #27ae60;
+
+$wet-light: #2d3748;
+$wet-dark: #1a202c;
+
+$red-light: #e74c3c;
+$red-dark: #c91a17;
+
+$yellow-light: #FF8F00;
+$yellow-dark: #FF6F00;
+
+$move-light: #9b59b6;
+$move-dark: #8e44ad;
+
+$teal-light: #1abc9c;
+$teal-dark: #16a085;
+
+$fb: #3b5998;
+$twitter: #1da1f2;
+$linkedin: #0077b5;
+
+$bg: #111;
+$bg-light: #222;
+$navbar-bg: #222;
+$gray: gray;
+$light-gray: lightgray;
+
+$main-font: 'Inter', sans-serif;
+$code-font: 'Fira Code', monospace;
+
+$breakpoints: (
+  "phone":        400px,
+  "phone-wide":   480px,
+  "phablet":      560px,
+  "tablet-small": 640px,
+  "tablet":       768px,
+  "tablet-wide":  1024px,
+  "desktop":      1248px,
+  "desktop-wide": 1440px
+);
+
+// Resets
+
+body {
+  font-family: $main-font !important;
+}
+ul {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+
+h1 { font-size: 2.2em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.7em; }
+h4 { font-size: 1.6em; }
+h5 { font-size: 1.4em; }
+h6 { font-size: 1.1em; }
+
+// Helper classes
+.red-c { color: $red-dark !important; }
+.blue-c { color: $blue-dark !important; }
+.green-c { color: $green-dark !important; }
+.yellow-c { color: $yellow-dark !important; }
+.wet-c { color: $wet-dark !important; }
+.pink-c { color: $move-dark !important; }
+
+.red-border {
+  border: 1px solid $red-dark !important;
+}
+.blue-border {
+  border: 1px solid $blue-dark !important;
+}
+.yellow-border {
+  border: 1px solid $yellow-dark !important;
+}
+.wet-border {
+  border: 1px solid $wet-dark !important;
+}
+.pink-border {
+  border: 1px solid $move-dark !important;
+}
+
+.inverse-img {
+  filter: invert(1);
+}
+
+.transRotate {
+  transform: rotate(180deg);
+}
+
+
+
+// Mixins
+@mixin boxShadow($blur: 3px, $color: #ddd) {
+  box-shadow: 0 2px $blur $color;
+}
+
+@mixin makeBox($bg: #fff, $border-radius: 4px, $padding: 10px, $box-shadow: 0 2px 3px #ddd) {
+  background-color: $bg;
+  border-radius: $border-radius;
+  padding: $padding;
+  box-shadow: $box-shadow;
+}
+
+@mixin flexBox($justify-type: flex-start, $align-items-type: flex-start, $wrap-type: wrap) {
+  display: flex;
+  flex-wrap: #{$wrap-type};
+  justify-content: #{$justify-type};
+  align-items: #{$align-items-type};
+}
+
+@mixin gridBox($repeat: 4, $fraction: 1fr, $gap: 15px) {
+  display: grid;
+  grid-template-columns: repeat($repeat, $fraction);
+  gap: $gap;
+}
+
+@mixin gridProps($justify-content: center, $align-items: center) {
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin transition($value: .25s ease-in-out) {
+  transition: $value;
+}
+
+@mixin bgOpacity($color, $value) {
+  background: transparentize($color, $value);
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+@mixin truncate($truncation-boundary) {
+  max-width: $truncation-boundary !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+@mixin mediaQuery($width, $type: min) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}

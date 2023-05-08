@@ -1,0 +1,59 @@
+@import "../../../../../assets/css/global";
+
+.stats-container {
+  .tabs-selection {
+    @include flexBox();
+    gap: 5px;
+    margin: 0 0 20px 0;
+    .tab-select {
+      @include makeBox();
+      width: fit-content;
+      cursor: pointer;
+      &:hover { background-color: #222; color: #FFF; }
+      &.active-tab { background-color: #222; color: #FFF; }
+    }
+  }
+  .default-tab {
+    .tab-title {
+      margin: 0 10px 6px;
+      font-size: 22px;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+  }
+  .charts-tab {
+    .stats-container {
+      .details-payment {
+        @include makeBox();
+        margin: 10px 0 0 60px;
+      }
+      .chart-container {
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+        .chart-title {
+          @include makeBox();
+          margin: 16px 0 18px 60px;
+          font-size: 16px;
+          width: fit-content;
+          span { font-weight: bold; }
+        }
+      }
+    }
+  }
+  .numerical-stats-tab {
+    .stats-container-all {
+      @include flexBox();
+      gap: 10px;
+      .stat-container {
+        @include makeBox();
+        width: 24%;
+        height: fit-content;
+        .icon { margin-bottom: 25px; }
+        .icon svg { font-size: 55px; color: $green-dark; }
+        .text {
+          h6 { margin: 10px 0 5px 0; font-size: 16px; }
+        }
+      }
+    }
+  }
+}

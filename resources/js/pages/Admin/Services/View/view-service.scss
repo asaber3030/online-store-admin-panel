@@ -1,0 +1,66 @@
+@import "../../../../assets/css/global";
+
+.view-service-container {
+  .top-header {
+    @include flexBox(space-between);
+    @include makeBox();
+    background-color: #222;
+    .left-items {
+      @include flexBox(flex-start, center);
+      gap: 10px;
+      img { width: 130px; height: 130px; border-radius: 5px; }
+      .text {
+        h6 { font-size: 18px; color: lightgray; }
+        .user-tags {
+          @include flexBox();
+          margin: 5px 0;
+          gap: 5px;
+          span, a {
+            padding: 2px 8px;
+            font-size: 11px;
+            background-color: #0e0d0d;
+            font-weight: 600;
+            border-radius: 3px;
+            color: gray;
+            svg { margin-right: 6px; }
+          }
+        }
+        .user-details {
+          @include flexBox();
+          gap: 5px;
+          color: lightgray;
+          .detailed-icon {
+            @include flexBox(center, center);
+            text-align: center;
+            padding: 10px;
+            min-height: 70px;
+            min-width: 100px;
+            border: 1px dashed #666;
+            border-radius: 3px;
+            color: lightgray;
+            svg, span { display: block; }
+            svg { font-size: 25px; margin: 10px auto; }
+            span { font-size: 12px; color: gray }
+            &:not(.verified, .not-verified):hover { background-color: #333; color: lightgray }
+            &.verified, &.not-verified { border-style: solid; span { font-weight: bold } }
+            &.verified { background-color: $green-dark !important; border-color: $green-dark; span, svg { color: #FFF } }
+            &.not-verified { background-color: $yellow-dark !important; border-color: $yellow-dark; span, svg { color: #FFF } }
+          }
+        }
+      }
+    }
+    .right-items-icon-action {
+      a, .dropdown { display: block; margin: 5px 0; }
+      .dropdown-toggle {
+        font-size: 12px;
+        width: 100%;
+      }
+    }
+  }
+  .service-details {
+    margin: 10px auto;
+    .service-title {
+      font-weight: 800;
+    }
+  }
+}

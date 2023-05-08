@@ -1,0 +1,60 @@
+@import "../../../assets/css/global";
+
+.importing-data-container {
+  @include flexBox(center);
+  gap: 6px;
+  .box-select {
+    @include transition();
+    @include boxShadow();
+    width: 22%;
+    text-align: center;
+    display: block;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    color: #444;
+    svg, span { display: block; margin: 10px auto 0; }
+    svg { font-size: 30px; }
+    span { font-size: 17px; }
+    &:hover { background-color: $blue-dark; color: #FFF; }
+  }
+}
+
+.importing-model {
+  @include flexBox();
+  gap: 25px;
+  .steps {
+    flex: 1;
+    .step {
+      @include makeBox();
+      margin: 10px 0;
+      text-align: center;
+      cursor: pointer;
+      &:hover { color: #fff; background-color: #222; }
+      &.active { color: #fff; background-color: #222; }
+      svg { font-size: 25px; margin: 15px 0; }
+      h6 { margin-bottom: 15px; }
+    }
+  }
+
+  .view-step {
+    flex: 4;
+    margin-top: 10px;
+    .step-title {
+      @include flexBox(space-between, center);
+      margin-bottom: 25px;
+      span {
+        font-size: 11px;
+        background-color: $blue-dark;
+        color: #FFF;
+        border-radius: 2px;
+        padding: 3px 7px;
+      }
+    }
+    .next-step-button {
+      padding-top: 18px;
+      border-top: 1px solid #ddd;
+    }
+  }
+
+}

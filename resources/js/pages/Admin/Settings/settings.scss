@@ -1,0 +1,65 @@
+@import "../../../assets/css/global";
+
+.settings-layout-global {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 30px;
+
+  .settings-content {
+    .settings-title {
+      margin: 35px 0 5px;
+      font-size: 19px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #Ddd;
+    }
+    .use-setting {
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+      .up-title { font-size: 14px; }
+      .up-description { font-size: 11px; color: gray; }
+
+      .form-file-group {
+        margin: 15px 0;
+      }
+
+      .add-flex {
+        @include flexBox();
+        gap: 5px;
+        .form-group { flex: 1; }
+      }
+
+      label { display: block }
+      input {
+        font-size: 14px;
+        border: 1px solid #ddd;
+        width: 100%;
+        display: block;
+        padding: 7px 15px;
+        border-radius: 5px;
+        margin: 10px 0;
+        &:focus { outline: none; }
+      }
+    }
+  }
+}
+
+
+/* admin/{code}/settings/api */
+
+.api-handle {
+  .href-look {
+    color: $blue-dark;
+    margin: 0 0 10px 0;
+    display: block;
+    font-size: 11px;
+    cursor: pointer;
+    &:hover { text-decoration: underline }
+  }
+  .showInput {
+    @include makeBox();
+    margin: 15px 0;
+    font-size: 14px;
+    font-family: $code-font;
+  }
+
+}

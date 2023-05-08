@@ -1,0 +1,36 @@
+@import "../../../../assets/css/global";
+
+.create-company {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 25px;
+  .right-data {
+    .company {
+      @include makeBox();
+      img {
+        width: 90px;
+        height: 90px;
+        margin: 10px auto 20px;
+      }
+      > h6, > span, > p { text-align: center; display: block; }
+      > h6 { font-weight: bold; font-size: 22px; }
+      > span { color: #666; font-size: 13px; }
+      ul {
+        padding: 10px 0;
+      }
+      p {
+        font-size: 13px;
+        color: #444;
+        padding-top: 10px;
+        border-top: 1px solid #f1f1f1;
+        margin: 0 0 5px;
+      }
+      .actions {
+        @include flexBox();
+        gap: 5px;
+        padding-top: 10px;
+        border-top: 1px solid #f1f1f1;
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@import "../../../../assets/css/global";
+
+.list-images-container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 10px;
+  .list-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    height: fit-content;
+    .image {
+      flex: 1;
+      @include makeBox();
+      img { width: 200px; height: 200px; border-radius: 5px !important; object-fit: contain; margin: 0 auto; }
+      .text {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 13px;
+        color: gray;
+      }
+      button {
+        display: block;
+        margin: 10px auto 0;
+      }
+    }
+  }
+  .create-form {
+    @include makeBox();
+    height: fit-content;
+    margin-bottom: 10px;
+    .form-file-group  {
+      background-color: #f1f1f1;
+      box-shadow: none;
+      border: 1px solid #ddd;
+    }
+    button {
+      svg { margin-right: 5px; }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import "../../../../assets/css/global";
+
+
+.choose-creation-type {
+  @include flexBox();
+  width: fit-content;
+  gap: 2px;
+  .creation-option {
+    @include flexBox(flex-start, center);
+    gap: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: #222;
+    color: gray;
+    cursor: pointer;
+    font-size: 13px;
+    user-select: none;
+    &.active-cr {
+      cursor: not-allowed;
+      background-color: #444;
+      user-select: none;
+      &:hover { background-color: #444; }
+    }
+    &:hover { background-color: #333; }
+  }
+}
+
+.create-product {
+  .right-data {
+    height: fit-content;
+    .list-items {
+      @include makeBox();
+    }
+  }
+}

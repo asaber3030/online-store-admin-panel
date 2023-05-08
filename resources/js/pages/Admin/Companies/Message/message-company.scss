@@ -1,0 +1,123 @@
+@import "../../../../assets/css/global";
+
+.message-company {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 10px;
+  .list-companies-messages {
+    .form-container { margin: 0 !important; padding: 0; .form-group { margin: 0 0 5px !important } }
+    .messages-container {
+      @include boxShadow(10px);
+      background-color: #FFF;
+      max-height: 600px;
+      overflow: auto;
+      border-radius: 5px;
+      &::-webkit-scrollbar {
+        width: 6px;
+        background-color: #f1f1f1;
+      }
+      &::-webkit-scrollbar-thumb { width: 5px; background-color: #ddd; border-radius: 3px }
+      .company-message {
+        @include flexBox(flex-start, center);
+        gap: 10px;
+        padding: 10px;
+        cursor: pointer;
+        position: relative;
+        img {
+          width: 35px;
+          height: 35px;
+        }
+        h5 {
+          font-size: 16px;
+        }
+        h6 {
+          font-size: 12px;
+          color: #999;
+          margin: 3px 0;
+        }
+        span {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+        }
+        &.active-message-company { background-color: #222; &:hover { background-color: #222; } h5 { color: #fff; } h6 { color: gray; } }
+        &:hover { background-color: #f1f1f1; }
+        &:not(:last-of-type) { border-bottom: 1px solid #f1f1f1; }
+      }
+
+    }
+  }
+
+  .message-details {
+    margin-top: 25px;
+    .user-card {
+      @include makeBox();
+      @include flexBox(flex-start, center);
+      margin-bottom: 10px;
+      gap: 15px;
+      position: relative;
+      .left-item {
+        img { width: 30px; height: 30px; }
+      }
+      .right-item {
+        h5 { font-size: 15px; }
+        h6 { font-size: 12px; }
+        span {
+          position: absolute;
+          color: #666;
+          font-size: 12px;
+          right: 5px;
+          bottom: 5px;
+        }
+      }
+    }
+    .list-messages {
+      @include makeBox();
+      max-height: 300px;
+      overflow: auto;
+      &::-webkit-scrollbar {
+        width: 6px;
+        background-color: #f1f1f1;
+      }
+      &::-webkit-scrollbar-thumb { width: 5px; background-color: #ddd; border-radius: 3px }
+      .message {
+        display: grid;
+        grid-template-columns: 1fr 19fr;
+        align-items: center;
+        padding: 10px;
+        gap: 15px;
+        &:not(:last-of-type) { border-bottom: 1px solid #f1f1f1; }
+        img { width: 40px; height: 40px; border-radius: 5px; }
+        .message-content {
+          @include boxShadow();
+          height: fit-content;
+          border-radius: 2px;
+          background-color: #f1f1f1;
+          padding: 10px;
+          font-size: 13px;
+          border: 1px solid #ddd;
+        }
+      }
+    }
+    .send-message {
+      .form-container {
+      }
+      button svg { margin: 0 }
+    }
+
+    .no-messages {
+      @include makeBox();
+      img {
+        width: 100px;
+        height: 100px;
+        margin: 30px auto;
+      }
+      h3 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-weight: 900;
+      }
+    }
+  }
+
+}
